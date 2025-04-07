@@ -1,23 +1,13 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'IniciarSesion.css' %}">
-    <title>Document</title>
-</head>
-<body>
+<link rel="stylesheet" href="{% static 'IniciarSesion.css' %}">
     <div class="login-container">
         <h1>Iniciar sesión</h1>
     
         {% if error %}
-        <p class="error">{{ error }}</p>
+            <p class="error">{{ error }}</p>
         {% endif %}
     
         <form action="/IniciarSesion/" method="POST">
@@ -26,9 +16,4 @@
             <button type="submit">Iniciar Sesión</button>
         </form>
     </div>
-</body>
-</html>
-
-
-
 {% endblock %}

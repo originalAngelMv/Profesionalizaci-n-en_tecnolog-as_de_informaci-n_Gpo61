@@ -5,8 +5,9 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Cambiado para que los elementos vayan de arriba a abajo */
+    justify-content: flex-start; /* Coloca los elementos en la parte superior */
+    align-items: center;
     min-height: 100vh; /* Asegura que ocupe toda la altura */
     width: 100%;
     box-sizing: border-box;
@@ -22,6 +23,7 @@ body {
     max-width: 500px;  /* Reducción del tamaño máximo del formulario */
     margin: 20px;
     box-sizing: border-box;
+    min-height: 300px; /* Añadir altura mínima para que ocupe más espacio en pantallas grandes */
 }
 
 /* Título Principal */
@@ -124,4 +126,51 @@ body {
     resize: vertical;  /* Permite solo redimensionar verticalmente */
     min-height: 150px;
     max-height: 300px;
+}
+
+/* Estilo para la barra de navegación */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff9900;
+}
+
+/* Estilo para el pie de página (opcional) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* Asegura que el pie de página esté al final */
 }

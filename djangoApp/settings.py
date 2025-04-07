@@ -133,4 +133,4 @@ STATIC_URL = '/static/'
 
 # Si estás en desarrollo, añade también esto al final del archivo:
 import os
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'tasks/static')]

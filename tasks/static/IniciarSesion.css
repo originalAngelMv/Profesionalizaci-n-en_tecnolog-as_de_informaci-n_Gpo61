@@ -1,55 +1,83 @@
-/* IniciarSesion.css */
-
+/* Estilo general */
 body {
-    background-color: #f2f2f2;
     font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Contenedor del formulario de login */
 .login-container {
-    max-width: 400px;
-    margin: 60px auto;
-    padding: 30px;
+    width: 100%;
+    max-width: 400px;  /* Ajustar el tamaño máximo del contenedor */
     background-color: white;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-sizing: border-box;
+    margin-top: 20px;  /* Ajustar el margen superior para que no esté tan pegado al borde */
 }
 
 .login-container h1 {
     margin-bottom: 20px;
     color: #333;
+    font-size: 24px;
 }
 
+/* Formulario */
 form p {
     text-align: left;
     margin: 15px 0;
 }
 
+/* Estilo de los inputs */
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding: 10px; /* Reducir el padding para que no se vea tan grande */
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 button {
     background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
     font-size: 16px;
+    width: 100%;
 }
 
 button:hover {
     background-color: #555;
 }
 
+/* Estilo para los errores */
 .error {
     color: red;
     margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-container h1 {
+        font-size: 20px;
+    }
 }

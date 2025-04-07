@@ -1,126 +1,124 @@
-/* General */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+/* Asegura que el body ocupe toda la altura de la pantalla */
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Estilo del encabezado */
+/* Asegura que el contenedor principal ocupe el espacio restante */
+main {
+    flex-grow: 1;  /* Hace que el contenido principal ocupe todo el espacio disponible */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Encabezado principal */
 h1 {
     text-align: center;
-    margin: 40px 0;
-    color: #00bcd4;
-    font-size: 2.5em;
-    font-weight: bold;
+    color: #333;
+    margin-top: 50px;
+    font-size: 2.5rem;
 }
 
-/* Mensaje */
+/* Estilo para los mensajes */
 .mensaje {
     text-align: center;
-    margin: 20px;
-    padding: 15px;
-    background-color: #dceef7;
-    color: #333;
-    border-radius: 8px;
-    font-size: 1.1em;
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 /* Contenedor de los servicios */
 .servicios-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px; /* Espacio entre los servicios */
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Cada servicio */
+/* Estilo para cada servicio */
 .servicio {
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 280px;
-    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 20px;
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinea los elementos al centro */
-    justify-content: space-between;
-    height: 400px; /* Altura fija para mantener uniformidad */
+    text-align: center;
 }
 
-/* Efecto de hover en los servicios */
+/* Efecto al pasar el mouse sobre el servicio */
 .servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las imágenes de los servicios */
+.servicio-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+.servicio-img:hover {
     transform: scale(1.05);
 }
 
-/* Imagen de cada servicio */
-.servicio-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    max-height: 200px; /* Limita la altura de las imágenes */
-}
-
-/* Título de cada servicio */
-.servicio h2 {
-    color: #00bcd4;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-/* Descripción de cada servicio */
-.servicio p {
-    font-size: 1.1em;
+/* Estilo de los títulos de los servicios */
+h2 {
     color: #333;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin: 20px 0;
+    font-weight: 600;
 }
 
-/* Botón de "Más información" */
+/* Estilo para los títulos pequeños (subtítulos) */
+.titulo-pequeno {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #666;
+}
+
+/* Estilo para el texto de descripción */
+.servicio p {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el botón */
 .servicio-btn {
+    background-color: #007bff;
+    color: #fff;
     text-decoration: none;
-    background-color: #00bcd4;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .servicio-btn:hover {
-    background-color: #0097a7;
+    background-color: #0056b3;
     transform: scale(1.05);
 }
 
-/* Estilo para los dispositivos móviles */
-@media (max-width: 768px) {
-    .servicios-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .servicio {
-        width: 80%;
-    }
-
-    .servicio h2 {
-        font-size: 1.3em;
-    }
-
-    .servicio p {
-        font-size: 1em;
-    }
-}
-
-/* Título pequeño para un solo encabezado */
-.titulo-pequeno {
-    font-size: 1.0em !important; /* Ajuste de tamaño más pequeño */
+/* Estilo para el pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto;  /* Asegura que el pie de página siempre esté al final */
 }
 
-
+/* Si el contenido de la página es corto, el pie de página se mantiene en la parte inferior */
