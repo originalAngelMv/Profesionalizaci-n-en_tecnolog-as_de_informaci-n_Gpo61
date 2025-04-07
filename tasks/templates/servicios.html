@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'servicios.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Servicios</h1>
+    
+    <p class="mensaje">{{ mensaje }}</p>
+    
+    <div class="servicios-container">
+        <div class="servicio">
+            <img src="{% static 'imagenes/pagina-web.png' %}" alt="Creación de páginas web" class="servicio-img">
+            <h2>Servicio de creación de páginas web empresariales</h2>
+            <p>Desarrollamos sitios web adaptados a las necesidades de tu empresa.</p>
+            <a href="/servicioWeb/" class="servicio-btn">Más información</a>
+        </div>
+    
+        <div class="servicio">
+            <img src="{% static 'imagenes/despliegue-servidores.jpg' %}" alt="Despliegue de servidores" class="servicio-img">
+            <h2>Servicio despliegue de servidores para una empresa</h2>
+            <p>Implementamos soluciones de infraestructura robustas y escalables.</p>
+            <a href="/despliegueServidores/" class="servicio-btn">Más información</a>
+        </div>
+    
+        <div class="servicio">
+            <img src="{% static 'imagenes/implementacion-ia.jpg' %}" alt="Implementación de IA" class="servicio-img">
+            <h2 class="titulo-pequeno">Implementación de la IA para la gestión o mejora de los procesos productivos y administrativos dentro del ámbito empresarial</h2>
+            <p>Transforma tu empresa mediante inteligencia artificial.</p>
+            <a href="/implementacionIa/" class="servicio-btn">Más información</a>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+
+{% endblock %}
+
+

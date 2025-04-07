@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="signup-title">Signup</h1>
+
+    <div class="error-message">
+        {{error}}
+    </div>
+
+    <form action="/signup/" method="POST" class="signup-form">
+        {% csrf_token %}
+        
+        <!-- Campo de Nombre de Usuario -->
+        <div>
+            {{ form.username }}
+            <div class="field-description">
+                Ingrese su nombre de usuario (mínimo 3 caracteres)
+            </div>
+        </div>
+        
+        <!-- Campo de Correo Electrónico -->
+        <div>
+            {{ form.email }}
+            <div class="field-description">
+                Ingrese una dirección de correo electrónico válida.
+            </div>
+        </div>
+
+        <!-- Campo de Contraseña -->
+        <div>
+            {{ form.password1 }}
+            <div class="field-description">
+                Ingrese una contraseña (mínimo 8 caracteres).
+            </div>
+        </div>
+
+        <!-- Confirmación de Contraseña -->
+        <div>
+            {{ form.password2 }}
+            <div class="field-description">
+                Confirme su contraseña.
+            </div>
+        </div>
+
+        <!-- Campo de Primer Nombre -->
+        <div>
+            {{ form.first_name }}
+            <div class="field-description">
+                Ingrese su primer nombre.
+            </div>
+        </div>
+
+        <!-- Campo de Apellido -->
+        <div>
+            {{ form.last_name }}
+            <div class="field-description">
+                Ingrese su apellido.
+            </div>
+        </div>
+
+        <!-- Campo de Número de Teléfono -->
+        <div>
+            {{ form.phone_number }}
+            <div class="field-description">
+                Ingrese su número de teléfono.
+            </div>
+        </div>
+
+        <!-- Campo de Dirección -->
+        <div>
+            {{ form.address }}
+            <div class="field-description">
+                Ingrese su dirección completa.
+            </div>
+        </div>
+
+        <!-- Campo de Ciudad -->
+        <div>
+            {{ form.city }}
+            <div class="field-description">
+                Ingrese su ciudad.
+            </div>
+        </div>
+
+        <!-- Campo de País -->
+        <div>
+            {{ form.country }}
+            <div class="field-description">
+                Ingrese su país.
+            </div>
+        </div>
+
+        <button type="submit">Signup</button>
+    </form>
+
+</body>
+</html>
+
+{% endblock %}

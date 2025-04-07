@@ -1,0 +1,126 @@
+/* General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado */
+h1 {
+    text-align: center;
+    margin: 40px 0;
+    color: #00bcd4;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Mensaje */
+.mensaje {
+    text-align: center;
+    margin: 20px;
+    padding: 15px;
+    background-color: #dceef7;
+    color: #333;
+    border-radius: 8px;
+    font-size: 1.1em;
+}
+
+/* Contenedor de los servicios */
+.servicios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Espacio entre los servicios */
+    margin-top: 40px;
+}
+
+/* Cada servicio */
+.servicio {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea los elementos al centro */
+    justify-content: space-between;
+    height: 400px; /* Altura fija para mantener uniformidad */
+}
+
+/* Efecto de hover en los servicios */
+.servicio:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen de cada servicio */
+.servicio-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    max-height: 200px; /* Limita la altura de las imágenes */
+}
+
+/* Título de cada servicio */
+.servicio h2 {
+    color: #00bcd4;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Descripción de cada servicio */
+.servicio p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Botón de "Más información" */
+.servicio-btn {
+    text-decoration: none;
+    background-color: #00bcd4;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.servicio-btn:hover {
+    background-color: #0097a7;
+    transform: scale(1.05);
+}
+
+/* Estilo para los dispositivos móviles */
+@media (max-width: 768px) {
+    .servicios-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio {
+        width: 80%;
+    }
+
+    .servicio h2 {
+        font-size: 1.3em;
+    }
+
+    .servicio p {
+        font-size: 1em;
+    }
+}
+
+/* Título pequeño para un solo encabezado */
+.titulo-pequeno {
+    font-size: 1.0em !important; /* Ajuste de tamaño más pequeño */
+    text-align: center;
+}
+
+

@@ -1,0 +1,65 @@
+/* Estilo general para el formulario */
+.signup-form {
+    width: 80%;  /* Ajustamos el ancho del formulario */
+    max-width: 500px;  /* No permitir que sea más grande que esto */
+    margin: 0 auto;  /* Centra el formulario */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los campos del formulario */
+.signup-form input,
+.signup-form button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+/* Estilo para los placeholders (instrucciones dentro de los campos) */
+.signup-form input::placeholder {
+    font-size: 0.9em; /* Reducir el tamaño de la fuente del placeholder */
+    color: #999; /* Cambiar el color del texto dentro de los campos */
+}
+
+/* Estilo para las descripciones o etiquetas debajo de los campos */
+.signup-form .field-description {
+    font-size: 0.85em; /* Reducir el tamaño de las descripciones */
+    color: #666; /* Hacer que las descripciones sean un poco más tenues */
+    margin-top: -5px; /* Ajustar la posición */
+    margin-bottom: 15px; /* Separar de los siguientes campos */
+}
+
+/* Botón de "Signup" */
+.signup-form button {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para cuando el botón "Signup" es hover */
+.signup-form button:hover {
+    background-color: #0097a7;
+}
+
+/* Título */
+.signup-title {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Mensaje de error */
+.error-message {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+}
