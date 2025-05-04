@@ -1,7 +1,242 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Servicios Web LTI">
+    <meta name="description" content="Desarrollamos soluciones web modernas y personalizadas para tu negocio.">
+    <meta name="author" content="Grupo 61 - LTI">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="ico">
+    <link rel="icon" href="/tasks/static/imagenes/logo.jpg" type="image/png">
     <link rel="stylesheet" href="{% static 'servicioWeb.css' %}">
-    <h1>Servicio de creación de páginas web empresariales</h1>
-{% endblock %}
+    <title>SERVICIOS LTI</title>
+    <style>
+        audio {
+            width: 100%;
+            max-width: 180px;
+            background-color: var(--color-blanco);
+            border: 2px solid var(--color-secundario);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            outline: none;
+        }
+
+        /* Estilizado de controles en navegadores WebKit */
+        audio::-webkit-media-controls-panel {
+            background-color: var(--color-principal);
+            border-radius: 10px;
+        }
+
+        audio::-webkit-media-controls-play-button {
+            background-color: var(--color-secundario);
+            border-radius: 50%;
+        }
+
+        audio::-webkit-media-controls-volume-slider {
+            background-color: var(--color-blanco);
+            border-radius: 5px;
+        }
+
+        /* Solución para mostrar el ícono de volumen correctamente */
+        audio::-webkit-media-controls-volume-slider-container {
+            background-color: transparent;
+            /* Elimina el fondo cuadrado del ícono */
+        }
+
+        audio::-webkit-media-controls-mute-button,
+        audio::-webkit-media-controls-volume-slider-container {
+            background-color: var(--color-secundario);
+            /* Da color al icono */
+        }
+
+        audio::-webkit-media-controls-volume-slider {
+            background-color: var(--color-secundario);
+        }
+
+        audio::-webkit-media-controls-mute-button {
+            background-color: var(--color-secundario);
+        }
+
+        /* Ocultamos el estilo por defecto de los controles nativos (en WebKit) */
+        audio::-webkit-media-controls-volume-slider-container,
+        audio::-webkit-media-controls-mute-button,
+        audio::-webkit-media-controls-volume-slider {
+            background: transparent !important;
+        }
+
+        /* Personalización de MediaElement Player para el botón de volumen */
+        .mejs__controls .mejs__volume-button button:before {
+            content: "\f028";
+            /* Código para el icono de volumen de FontAwesome */
+            font-family: "FontAwesome";
+            font-size: 20px;
+            color: var(--color-secundario);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>GESTIÓN DE SERVICIOS INFORMÁTICOS</h1>
+        <h2>SERVICIO: CREACIÓN DE PÁGINAS WEB EMPRESARIALES</h2>
+        <p>Diseñamos y desarrollamos sitios web optimizados, seguros y visualmente atractivos, pensados para impulsar la
+            presencia digital de tu empresa, mejorar la experiencia del usuario y generar más oportunidades de negocio.
+        </p>
+    </header>
+
+    <main>
+        <section>
+            <h2>¿QUÉ OFRECEMOS?</h2>
+            <ul>
+                <li>✅ Creación de páginas web profesionales, optimizadas y seguras.</li>
+                <li>🎨 Diseño atractivo y funcional para mejorar la experiencia del usuario.</li>
+                <li>🔧 Personalización total según la identidad y necesidades del cliente.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>DIRIGIDO A:</h2>
+            <ul>
+                <li>🏢 <strong>PYMES:</strong> Para aumentar visibilidad y credibilidad en línea.</li>
+                <li>🚀 <strong>Startups:</strong> Para atraer clientes e inversionistas con presencia digital.</li>
+                <li>🏛️ <strong>Grandes corporaciones:</strong> Sitios optimizados para operaciones en línea.</li>
+                <li>🚚 <strong>Empresas de transporte:</strong> Plataformas para rastreo, reservas y atención al
+                    cliente.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>¿POR QUÉ NECESITAS UNA PÁGINA WEB?</h2>
+            <ul>
+                <li>🌍 Mayor alcance</li>
+                <li>✅ Credibilidad y profesionalismo</li>
+                <li>🕒 Disponibilidad 24/7</li>
+                <li>📈 Marketing digital y SEO</li>
+                <li>💻 Gestión de servicios en línea</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>TECNOLOGÍAS QUE UTILIZAMOS</h2>
+            <p>HTML, CSS, JavaScript, CMS, frameworks/librerías, APIs y bases de datos.</p>
+        </section>
+
+        <section>
+            <h2>¿CÓMO TRABAJAMOS?</h2>
+            <ol>
+                <li>Analizamos tus necesidades</li>
+                <li>Diseñamos tu solución</li>
+                <li>Implementamos y damos soporte</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>COMISIONES Y PERSONALIZACIÓN</h2>
+            <p>Ofrecemos comisiones basadas en el registro de pedidos, considerando factores como el tiempo de
+                producción, diseño, escalabilidad y mantenimiento. El precio se ajustará según las necesidades del
+                cliente bajo contrato.</p>
+        </section>
+
+        <section>
+            <h2>SECCIÓN DE TESTIMONIOS</h2>
+            <article>
+                <figure>
+                    <div>
+                        <img src="/tasks/static/imagenes/hombre1.jpg" alt="Imagen del testificador" />
+                        <figcaption>
+                            Cliente 1: “¡Me salvaron el día! Puntuales, atentos y súper eficientes.”
+                            <br />
+                            <audio class="fc-media" controls>
+                                <source src="/tasks/static/audio/hombre2.mp3" type="audio/mpeg">
+                                Tu navegador no soporta la reproducción de audio.
+                            </audio>
+                        </figcaption>
+                    </div>
+                    <div>
+                        <img src="/tasks/static/imagenes/mujer2.jpeg" alt="Imagen del testificador" />
+                        <figcaption>
+                            Cliente 2: “Desde el primer contacto se notó el profesionalismo. Todo fue fácil y rápido.”
+                            <br />
+                            <audio class="fc-media" controls>
+                                <source src="/tasks/static/audio/mujer2.mp3" type="audio/mpeg">
+                                Tu navegador no soporta la reproducción de audio.
+                            </audio>
+                        </figcaption>
+                    </div>
+                    <div>
+                        <img src="/tasks/static/imagenes/hombre2.png" alt="Imagen del testificador" />
+                        <figcaption>
+                            Cliente 3: “No solo hicieron un gran trabajo, ¡sino que fueron súper amables todo el
+                            tiempo!”
+                            <br />
+                            <audio class="fc-media" controls>
+                                <source src="/tasks/static/audio/hombre.mp3" type="audio/mpeg">
+                                Tu navegador no soporta la reproducción de audio.
+                            </audio>
+                        </figcaption>
+                    </div>
+                </figure>
+            </article>
+        </section>
+        <section>
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Nos presentamos mi equipo y yo, y destacamos por qué somos únicos.</p>
+            <h3>EXPERIENCIA</h3>
+            <ul>
+                <li>Empresa X - Desarrollo de plataformas</li>
+                <li>Empresa Y - Integración de APIs</li>
+                <li>Empresa Z - Seguridad web</li>
+            </ul>
+            <h3>ENFOQUE</h3>
+            <p>Nos enfocamos en soluciones eficientes y escalables.</p>
+            <h3>VALORES</h3>
+            <p>Compromiso, calidad y transparencia en cada proyecto.</p>
+        </section>
+    </main>
+
+    <footer>
+        <button>EMPECEMOS A PROGRAMAR</button>
+        <h2>CONOCER MÁS</h2>
+        <nav>
+            <li><a href="#">Contactos</a></li>
+            <li><a href="#">Redes Sociales</a></li>
+            <li><a href="#">Políticas / Blog</a></li>
+        </nav>
+    </footer>00
+    <script>
+        var audio = {
+            init: function () {
+                var $that = this;
+                $(function () {
+                    $that.components.media();
+                });
+            },
+            components: {
+                media: function (target) {
+                    var media = $('audio.fc-media', (target !== undefined) ? target : 'body');
+                    if (media.length) {
+                        media.mediaelementplayer({
+                            audioHeight: 40,
+                            features: ['playpause', 'current', 'duration', 'progress', 'volume', 'tracks', 'fullscreen'],
+                            alwaysShowControls: true,
+                            timeAndDurationSeparator: '<span></span>',
+                            iPadUseNativeControls: true,
+                            iPhoneUseNativeControls: true,
+                            AndroidUseNativeControls: true
+                        });
+                    }
+                },
+            },
+        };
+        audio.init();
+    </script>
+</body>
+
+</html>
