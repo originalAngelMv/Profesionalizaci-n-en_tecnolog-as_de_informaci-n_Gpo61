@@ -1,0 +1,58 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-left: 6px solid #7b1fa2; /* morado elegante */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.beneficios {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.beneficios h2 {
+    color: #4a148c;
+    margin-bottom: 10px;
+}
+
+.beneficios ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #555;
+}
+
+.beneficios li {
+    margin-bottom: 8px;
+}
+
+.imagen {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.imagen img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

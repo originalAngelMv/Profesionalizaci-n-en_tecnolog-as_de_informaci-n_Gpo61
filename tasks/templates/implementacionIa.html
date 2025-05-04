@@ -1,7 +1,32 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
     <link rel="stylesheet" href="{% static 'implementacionIa.css' %}">
+    
     <h1>Implementación de la IA para la gestión o mejora de los procesos productivos y administrativos dentro del ámbito empresarial</h1>
+
+    <section class="intro">
+        <p>
+            La inteligencia artificial (IA) se ha convertido en una herramienta clave en la transformación digital de las empresas. 
+            Su implementación permite optimizar tareas repetitivas, mejorar la toma de decisiones y aumentar la eficiencia en 
+            diferentes áreas de una organización.
+        </p>
+    </section>
+
+    <section class="beneficios">
+        <h2>Beneficios de la IA en los procesos empresariales:</h2>
+        <ul>
+            <li>Automatización de procesos rutinarios</li>
+            <li>Reducción de errores humanos</li>
+            <li>Análisis predictivo para una mejor planificación</li>
+            <li>Atención al cliente mediante chatbots</li>
+            <li>Optimización del manejo de inventarios</li>
+        </ul>
+    </section>
+
+    <section class="imagen">
+        <img src="{% static 'imagenes/ia_empresa.jpg' %}" alt="IA en empresas">
+    </section>
 {% endblock %}
