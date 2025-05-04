@@ -1,124 +1,103 @@
-/* Asegura que el body ocupe toda la altura de la pantalla */
-html, body {
-    height: 100%;
+/* Fondo general */
+body {
+    background-color: #f5f8fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fa;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
 }
 
-/* Asegura que el contenedor principal ocupe el espacio restante */
-main {
-    flex-grow: 1;  /* Hace que el contenido principal ocupe todo el espacio disponible */
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Encabezado principal */
-h1 {
+/* Título principal */
+main h1 {
     text-align: center;
-    color: #333;
-    margin-top: 50px;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-top: 40px;
+    color: #222;
 }
 
-/* Estilo para los mensajes */
+/* Mensaje opcional */
 .mensaje {
     text-align: center;
-    color: #555;
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-/* Contenedor de los servicios */
-.servicios-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Estilo para cada servicio */
-.servicio {
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Efecto al pasar el mouse sobre el servicio */
-.servicio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para las imágenes de los servicios */
-.servicio-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-/* Efecto al pasar el mouse sobre la imagen */
-.servicio-img:hover {
-    transform: scale(1.05);
-}
-
-/* Estilo de los títulos de los servicios */
-h2 {
-    color: #333;
-    font-size: 1.8rem;
-    margin: 20px 0;
-    font-weight: 600;
-}
-
-/* Estilo para los títulos pequeños (subtítulos) */
-.titulo-pequeno {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #666;
-}
-
-/* Estilo para el texto de descripción */
-.servicio p {
-    color: #777;
-    font-size: 1rem;
+    color: #007bff;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* Estilo para el botón */
+/* Contenedor de servicios */
+.servicios-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* Tarjetas de servicio */
+.servicio {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover para tarjetas */
+.servicio:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen */
+.servicio-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Título del servicio */
+.servicio h2,
+.servicio .titulo-pequeno {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Descripción */
+.servicio p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Botón */
 .servicio-btn {
     background-color: #007bff;
-    color: #fff;
+    color: white;
+    padding: 10px 16px;
     text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .servicio-btn:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
 }
 
-/* Estilo para el pie de página */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    margin-top: auto;  /* Asegura que el pie de página siempre esté al final */
-}
+/* Responsivo */
+@media (max-width: 768px) {
+    .servicios-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Si el contenido de la página es corto, el pie de página se mantiene en la parte inferior */
+    .servicio {
+        width: 90%;
+    }
+}

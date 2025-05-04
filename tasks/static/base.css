@@ -1,105 +1,124 @@
-/* General: El cuerpo de la página debe ocupar toda la altura disponible */
-html, body {
-    height: 100%;
+.base-layout * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Contenido principal debe ocupar el espacio restante */
-main {
-    flex: 1; /* Hace que el contenido ocupe todo el espacio disponible entre la navegación y el footer */
-    padding: 20px;
-}
-
-/* Barra de navegación */
-nav {
-    background-color: #333;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-/* Estilos del pie de página */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: auto; /* Esto asegura que el footer esté pegado al final */
-    position: relative;
-    bottom: 0;
-    width: 100%; /* Ocupa todo el ancho */
-}
-
-/* Opcional: Estilos generales para el contenido */
-h1 {
-    font-size: 2em;
+.base-layout {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
     color: #333;
-}
-
-p {
-    font-size: 1.2em;
     line-height: 1.6;
 }
 
-.servicios-container {
+.base-layout main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.base-layout nav {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 16px;
+}
+
+.base-layout nav ul {
+    list-style-type: none;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
 }
 
-.servicio {
-    background: #f4f4f4;
-    border-radius: 8px;
-    padding: 20px;
-    width: 30%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.base-layout nav ul li {
+    margin: 0 20px;
 }
 
-.servicio img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.servicio h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
-}
-
-.servicio-btn {
-    background-color: #007BFF;
+.base-layout nav ul li a {
     color: white;
-    padding: 10px 15px;
     text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.servicio-btn:hover {
-    background-color: #0056b3;
+.base-layout nav ul li a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.base-layout footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.base-layout footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.base-layout nav ul li a.active {
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+.base-layout section {
+    margin-bottom: 30px;
+}
+
+.base-layout h1,
+.base-layout h2,
+.base-layout h3 {
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.base-layout p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.base-layout a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.base-layout a:hover {
+    text-decoration: underline;
+}
+
+.base-layout form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.base-layout input,
+.base-layout textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.base-layout input[type="submit"] {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.base-layout input[type="submit"]:hover {
+    background-color: #004d99;
 }
