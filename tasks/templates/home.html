@@ -2,8 +2,690 @@
 {% load static %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-    <h1>Inicio</h1>
-    {{ mensaje }}
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil explicabo possimus at cupiditate aperiam, aliquid soluta debitis voluptatibus fugit nobis eaque maiores quas fuga recusandae adipisci dolores nisi laboriosam?</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTI Solutions - Tecnología que impulsa tu negocio</title>
+    <style>
+        :root {
+            --primary: #c62828;      
+            --secondary: #8e0000;      
+            --accent: #ff5f52;        
+            --light: #f5f5f5;        
+            --dark: #424242;         
+            --text-light: #ffffff;    
+            --text-dark: #212121;    
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        
+        .logo-text p {
+            margin: 0;
+            font-size: 0.8rem;
+            opacity: 0.9;
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .services {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            color: var(--primary);
+        }
+        
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            font-style: normal;
+            opacity: 0.7;
+        }
+        
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: var(--dark);
+        }
+        
+        .contact-info ul li i {
+            margin-right: 10px;
+            color: var(--primary);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(198, 40, 40, 0.2);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--text-light);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column p {
+            color: #bdbdbd;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #bdbdbd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #bdbdbd;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/tasks/templates/logo.png" alt="LTI Solutions Logo">
+                    <div class="logo-text">
+                        <h1>LTI Solutions</h1>
+                        <p>Tecnología que impulsa tu negocio</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Soluciones inteligentes en TI para transformar y optimizar tus procesos</h2>
+            <p>Impulsamos tu transformación digital con soluciones tecnológicas a la medida. Desarrollo web, servidores empresariales e implementación de inteligencia artificial para optimizar tus procesos.</p>
+            <a href="#services" class="btn">Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Desarrollo Web">
+                    </div>
+                    <div class="service-content">
+                        <h3>Creación de Páginas Web Empresariales</h3>
+                        <p>Diseñamos y desarrollamos sitios web optimizados, seguros y visualmente atractivos, pensados para impulsar la presencia digital de tu empresa.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Servidores">
+                    </div>
+                    <div class="service-content">
+                        <h3>Despliegue de Servidores Empresariales</h3>
+                        <p>Ofrecemos soluciones personalizadas según las necesidades de tu negocio, con opciones locales, en la nube o híbridas. Garantizamos seguridad avanzada y alto rendimiento.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1677442135136-760c813a743e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Inteligencia Artificial">
+                    </div>
+                    <div class="service-content">
+                        <h3>Implementación de Inteligencia Artificial</h3>
+                        <p>Integramos soluciones tecnológicas avanzadas para optimizar tanto los procesos productivos como los administrativos dentro de tu empresa.</p>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Nosotros lo hacemos por TI</h2>
+                    <p>Somos un equipo de profesionales en tecnologías de información comprometidos con ofrecer soluciones tecnológicas a la medida para impulsar el crecimiento de tu negocio.</p>
+                    <p>En LTI Solutions entendemos que la tecnología es el corazón de tu empresa, por eso nos especializamos en desarrollar sitios web, servidores empresariales y soluciones con inteligencia artificial que mejoran tus procesos.</p>
+                    <p>Nuestro equipo está formado por expertos en diversas áreas de TI, lo que nos permite ofrecer un servicio integral y de alta calidad.</p>
+                    <a href="#contact" class="btn">Contáctanos</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Equipo LTI Solutions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que dicen nuestros clientes</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"LTI Solutions transformó completamente nuestra presencia en línea. Su equipo profesional desarrolló un sitio web que no solo es hermoso, sino también altamente funcional."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente satisfecho">
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Directora de Marketing, RetailCo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"La implementación de servidores que realizó LTI Solutions ha optimizado nuestras operaciones en un 40%. Su soporte técnico es excepcional."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho">
+                        <div class="author-info">
+                            <h4>Carlos Mendoza</h4>
+                            <p>Gerente de TI, Logística Norte</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Gracias a las soluciones de IA de LTI Solutions, hemos automatizado procesos clave y mejorado nuestra toma de decisiones basada en datos."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente satisfecho">
+                        <div class="author-info">
+                            <h4>Ana Torres</h4>
+                            <p>Directora Financiera, Manufactura Avanzada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <p>Estamos aquí para ayudarte a encontrar las mejores soluciones tecnológicas para tu negocio.</p>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> San Nicolás de los Garza, N.L., Calle 203 #45-67</li>
+                        <li><i class="fas fa-phone"></i> (81) 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> correo@ltisolutions.com</li>
+                        <li><i class="fas fa-clock"></i> Lunes a viernes de 8:00 a.m. a 12:00 m y 2:00 p.m. a 6:00 p.m.</li>
+                    </ul>
+                    <h3>Extensiones</h3>
+                    <ul>
+                        <li><i class="fas fa-user-tie"></i> Director: Extensión 2395</li>
+                        <li><i class="fas fa-headset"></i> Atención al cliente: Extensión 109</li>
+                        <li><i class="fas fa-user-secret"></i> Secretaria: Extensión 101</li>
+                        <li><i class="fas fa-laptop-code"></i> Consultoría TI: Extensión 355</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="tel" placeholder="Teléfono">
+                        <select required>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="web">Desarrollo Web</option>
+                            <option value="servers">Servidores Empresariales</option>
+                            <option value="ai">Inteligencia Artificial</option>
+                            <option value="other">Otro</option>
+                        </select>
+                        <textarea placeholder="Tu mensaje" required></textarea>
+                        <button type="submit" class="btn">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LTI Solutions</h3>
+                    <p>Tecnología que impulsa tu negocio. Soluciones inteligentes en TI para transformar y optimizar tus procesos.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Creación de Páginas Web</a></li>
+                        <li><a href="#">Despliegue de Servidores</a></li>
+                        <li><a href="#">Implementación de IA</a></li>
+                        <li><a href="#">Consultoría TI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> San Nicolás de los Garza, N.L.</li>
+                        <li><i class="fas fa-phone"></i> (81) 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> correo@ltisolutions.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 LTI Solutions. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
 {% endblock %}
